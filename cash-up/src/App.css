@@ -1,0 +1,128 @@
+#root {
+  min-height: 100dvh;
+}
+
+.app {
+  width: min(100%, 560px);
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding:
+    max(28px, env(safe-area-inset-top))
+    18px
+    max(28px, env(safe-area-inset-bottom));
+}
+
+.header {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: #8b93a7;
+  font-size: 14px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 38px;
+  letter-spacing: -1.5px;
+}
+
+.period {
+  margin: 6px 0 0;
+  color: #8b93a7;
+}
+
+.summary,
+.category,
+.refund {
+  border: 1px solid #292d39;
+  border-radius: 22px;
+  background: #171922;
+}
+
+.summary {
+  display: grid;
+  gap: 8px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.summary span,
+.refund span {
+  color: #a6adbd;
+}
+
+.summary strong {
+  font-size: 34px;
+  letter-spacing: -1px;
+}
+
+.summary small {
+  color: #767e91;
+}
+
+.categories {
+  display: grid;
+  gap: 12px;
+}
+
+.category,
+.refund {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+}
+
+.category h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+}
+
+.category p {
+  margin: 0;
+  color: #9da5b7;
+}
+
+button {
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 14px;
+  padding: 11px 14px;
+  background: #f3f4f6;
+  color: #11131a;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.refund {
+  margin-top: 20px;
+}
+
+.refund div {
+  display: grid;
+  gap: 4px;
+}
+
+.refund strong {
+  font-size: 20px;
+}
+
+@media (max-width: 430px) {
+  .category,
+  .refund {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
