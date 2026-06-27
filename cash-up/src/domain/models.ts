@@ -1,55 +1,34 @@
+export type PeriodStatus = 'active' | 'closed'
+
 export interface BudgetPeriod {
   id?: number
-
   startDate: string
   endDate: string
-
-  incomeMinor: number
-  savingsMinor: number
-
+  expectedIncomeMinor: number
+  status: PeriodStatus
   createdAt: string
 }
 
 export interface BudgetCategory {
   id?: number
   periodId: number
-
   name: string
   allocatedMinor: number
-
-  icon?: string
   sortOrder: number
   isArchived: boolean
+  isPinned: boolean
 }
 
-export type TransactionType =
-  | 'expense'
-  | 'income'
-  | 'refund'
-  | 'transfer'
+export type TransactionDirection = 'expense' | 'income'
+export type TransactionScope = 'category' | 'budget'
 
 export interface BudgetTransaction {
   id?: number
   periodId: number
   categoryId?: number
-
-  type: TransactionType
+  direction: TransactionDirection
+  scope: TransactionScope
   amountMinor: number
-
   occurredAt: string
-  note?: string
-}
-
-export type RefundStatus = 'pending' | 'received'
-
-export interface PendingRefund {
-  id?: number
-  periodId: number
-
-  name: string
-  amountMinor: number
-  status: RefundStatus
-
-  expectedAt?: string
-  receivedAt?: string
+  description: string
 }
